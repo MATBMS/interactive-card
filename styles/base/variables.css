@@ -1,0 +1,39 @@
+:root {
+  /* COLORS */
+  /* black & white */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  /* grey */
+  --color-grey-950: #2f2f2f;
+  --color-grey-400: #adb5be;
+  --color-grey-200: #dfdee0;
+  /* purple */
+  --color-purple-950: #21092f;
+  --color-purple-500: #d53aff;
+  /* orange */
+  --color-orange-400: #ff834a;
+  /* blue */
+  --color-blue-400: #47a2ff;
+  /* red */
+  --color-red-500: #ff5050;
+
+  /* GRADIENTS */
+  --color-gradient-grey: linear-gradient(to right, #ffffff, #d2d3d9);
+  --color-gradient-blue: linear-gradient(to right, #6348fe, #610595);
+
+  /* SPACING */
+  --spacing-0: 0;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-700: 3.5rem;
+  --spacing-800: 4rem;
+  --spacing-900: 4.5rem;
+  --spacing-1000: 5rem;
+  --spacing-1100: 5.5rem;
+  --spacing-1200: 6rem;
+  --spacing-1300: 6.5rem;
+}

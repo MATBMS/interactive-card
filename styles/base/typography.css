@@ -1,0 +1,78 @@
+/* IMPORT */
+
+@font-face {
+  font-family: "SpaceGrotesk-Medium";
+  src: url("../../fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* VARIABLES */
+
+:root {
+  --font-family-medium: "SpaceGrotesk-Medium", sans-serif;
+}
+
+/* GENERAL */
+
+* {
+  font-family: var(--font-family-medium);
+}
+
+/* TEXT PRESETS */
+
+.text-preset-1 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 36.4px */
+  letter-spacing: 3.5px;
+}
+
+.text-preset-2 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 2.5px;
+}
+
+.text-preset-3 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+}
+
+.text-preset-4 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.text-preset-5 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 15px */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.text-preset-6 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 15px */
+}
+
+.text-preset-7 {
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 11.25px */
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
