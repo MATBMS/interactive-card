@@ -109,6 +109,7 @@
               type="text"
               placeholder="e.g. Jane Appleseed"
               class="input-l"
+              required
             />
           </fieldset>
           <fieldset>
@@ -118,6 +119,7 @@
               type="number"
               placeholder="e.g. 1234 5678 9123"
               class="input-l"
+              required
             />
           </fieldset>
           <div class="expiry-cvc-fields">
@@ -129,12 +131,14 @@
                   type="number"
                   placeholder="MM"
                   class="input-s"
+                  required
                 />
                 <input
                   id="card-exp-year"
                   type="number"
                   placeholder="YY"
                   class="input-s"
+                  required
                 />
               </div>
             </fieldset>
@@ -145,6 +149,7 @@
                 type="number"
                 placeholder="e.g. 123"
                 class="input-m"
+                required
               />
             </fieldset>
           </div>
@@ -153,5 +158,6 @@
         <button type="submit">Confirm</button>
       </form>
     </section>
+    <script src="./scripts/submit.js"></script>
   </body>
 </html>
