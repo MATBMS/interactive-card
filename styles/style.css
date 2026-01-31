@@ -14,6 +14,7 @@
 
 /* Sections */
 @import url("./sections/interactive-form.css");
+@import url("./sections/thank-you.css");
 
 /* Utilities - Must be last to override other styles */
 @import url("./utilities/display.css");

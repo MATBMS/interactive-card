@@ -100,58 +100,20 @@
         </div>
       </div>
       <!-- END INTERACTIVE CARD -->
-      <form id="submit-card" action="/thank-you.html" method="post">
-        <div class="form-fields">
-          <fieldset>
-            <label for="card-name">Cardholder Name</label>
-            <input
-              id="card-name"
-              type="text"
-              placeholder="e.g. Jane Appleseed"
-              class="input-l"
-            />
-          </fieldset>
-          <fieldset>
-            <label for="card-number">Card Number</label>
-            <input
-              id="card-number"
-              type="number"
-              placeholder="e.g. 1234 5678 9123"
-              class="input-l"
-            />
-          </fieldset>
-          <div class="expiry-cvc-fields">
-            <fieldset>
-              <label for="card-exp-month">Exp. Date (MM/YY)</label>
-              <div class="expiry-fields">
-                <input
-                  id="card-exp-month"
-                  type="number"
-                  placeholder="MM"
-                  class="input-s"
-                />
-                <input
-                  id="card-exp-year"
-                  type="number"
-                  placeholder="YY"
-                  class="input-s"
-                />
-              </div>
-            </fieldset>
-            <fieldset>
-              <label for="card-cvc">CVC</label>
-              <input
-                id="card-cvc"
-                type="number"
-                placeholder="e.g. 123"
-                class="input-m"
-              />
-            </fieldset>
+      <div class="thank-you-container">
+        <img
+          src="./icons/icon-complete.svg"
+          alt="icon complete"
+          class="icon-complete"
+        />
+        <div class="message-container">
+          <div class="message-text-container">
+            <h1 class="text-preset-1">Thank you!</h1>
+            <p class="text-preset-3">We've added your card details</p>
           </div>
-          <!-- END expiry-cvc-fields -->
+          <a href="./index.html" class="btn">Continue</a>
         </div>
-        <button type="submit">Confirm</button>
-      </form>
+      </div>
     </section>
   </body>
 </html>

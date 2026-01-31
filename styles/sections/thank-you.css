@@ -1,0 +1,48 @@
+.thank-you-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 90px;
+  width: 327px;
+  gap: var(--spacing-400);
+}
+
+.icon-complete {
+  width: 80px;
+  height: 80px;
+}
+
+.message-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-600);
+}
+
+.message-container p {
+  color: var(--color-grey-400);
+}
+
+.message-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+/* TABLET (768px and up) */
+@media (min-width: 48em) {
+  .thank-you-container {
+    margin-top: 175px;
+    width: 380px;
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 90em) {
+  .thank-you-container {
+    margin-top: 305px;
+  }
+}

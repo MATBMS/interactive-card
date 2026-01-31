@@ -1,4 +1,5 @@
-button {
+button,
+.btn {
   /* layout */
   display: flex;
   height: 53px;
