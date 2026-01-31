@@ -1,0 +1,24 @@
+#interactive-card-details {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 240px auto;
+}
+
+/* MOBILE (375px and up) */
+@media (min-width: 23.4375em) {
+}
+
+/* TABLET (768px and up) */
+@media (min-width: 48em) {
+  #interactive-card-details {
+    grid-template-rows: 340px auto;
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 90em) {
+  #interactive-card-details {
+    grid-template-columns: 485px 1fr;
+    grid-template-rows: auto;
+  }
+}

@@ -1,0 +1,250 @@
+/* CARD */
+.card {
+  width: 286px;
+  height: 157px;
+  border-radius: 6px;
+  z-index: -4;
+}
+
+/* CARD FRONT */
+#card-front {
+  background: linear-gradient(164deg, #6348fe 4.74%, #610595 88.83%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front-card-details {
+  display: flex;
+  flex-direction: column;
+  width: 87%; /* 245 / 285 */
+  gap: var(--spacing-500);
+}
+
+/* CARD FRONT BACKGROUND */
+.card-front-oval {
+  width: 94.777px;
+  height: 262.627px;
+  transform: rotate(45deg);
+  border-radius: 262.627px;
+  opacity: 0.8474;
+  filter: blur(40px);
+  position: absolute;
+  z-index: -3;
+}
+
+.card-front-oval-pink {
+  background: var(--color-purple-500);
+  top: -150px;
+  right: 30px;
+  z-index: -3;
+}
+
+.card-front-oval-orange {
+  background: var(--color-orange-400);
+  top: -150px;
+  right: -50px;
+  z-index: -2;
+}
+
+.card-front-oval-blue {
+  background: var(--color-blue-400);
+  top: 10px;
+  right: 100px;
+  z-index: -1;
+}
+
+/* CARD LOGO */
+
+.card-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-100);
+}
+
+.card-logo-circle-large {
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.card-logo-circle-small {
+  width: 13.5px;
+  height: 13.5px;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+}
+
+/* CARD FRONT INFO */
+.card-front-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  align-self: stretch;
+}
+
+/* CARD NUMBER */
+
+/* CARD FRONT INFO BOTTOM */
+.card-front-info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+/* CARD NAME */
+
+/* CARD DATE */
+
+/* CARD BACK */
+#card-back {
+  background: var(--color-gradient-grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 15px;
+}
+
+.card-back-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+/* MAGNETIC STRIPE */
+.card-back-magnetic-stripe {
+  width: 100%;
+  height: 34.6px;
+  background-color: var(--color-grey-950);
+}
+
+.card-back-info {
+  display: flex;
+  width: 85.6%; /* 361 / 447 */
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-400);
+}
+
+.card-back-cvc-container {
+  height: 29.7px;
+  border-radius: 4px;
+  background-color: var(--color-grey-400);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 16px;
+}
+
+/* TABLET (768px and up) */
+@media (min-width: 48em) {
+  .card {
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
+  }
+
+  .card-front-card-details {
+    width: 86%; /* 383 / 447 */
+    gap: var(--spacing-800);
+  }
+
+  /* CARD FRONT BACKGROUND */
+  .card-front-oval {
+    width: 131px;
+    height: 363px;
+    border-radius: 363px;
+  }
+
+  .card-front-oval-pink {
+    top: -150px;
+    right: 80px;
+  }
+
+  .card-front-oval-orange {
+    top: -150px;
+    right: -50px;
+  }
+
+  .card-front-oval-blue {
+    top: 100px;
+    right: 150px;
+  }
+
+  /* CARD LOGO */
+
+  .card-logo {
+    gap: var(--spacing-200);
+  }
+
+  .card-logo-circle-large {
+    width: 47px;
+    height: 47px;
+  }
+
+  .card-logo-circle-small {
+    width: 21px;
+    height: 21px;
+  }
+
+  .card-back-content {
+    gap: var(--spacing-300);
+  }
+
+  /* MAGNETIC STRIPE */
+  .card-back-magnetic-stripe {
+    height: 54px;
+  }
+
+  .card-back-cvc-container {
+    height: 38px;
+    border-radius: 4px;
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 90em) {
+  /* card-back-info-lines */
+  .card-back-info-lines {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+  }
+
+  .card-back-info-lines-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-100);
+  }
+
+  .card-back-info-line {
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color-grey-400);
+  }
+
+  .card-back-info-line-xs {
+    width: 0.56rem; /* 9 / 16 */
+  }
+  .card-back-info-line-s {
+    width: 1.375rem; /* 22 / 16 */
+  }
+  .card-back-info-line-m {
+    width: 3.75rem; /* 60 / 16 */
+  }
+  .card-back-info-line-l {
+    width: 7.1875rem; /* 115 / 16 */
+  }
+}

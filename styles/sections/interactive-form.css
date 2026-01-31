@@ -1,0 +1,93 @@
+/* INTERACTIVE CARD */
+#interactive-card {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/bg-main-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.card-wrapper {
+  width: 342px;
+  height: 250px;
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#card-back {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+#card-front {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 2;
+}
+
+/* FORM */
+#submit-card {
+  width: 327px;
+  height: auto;
+  margin: auto;
+  margin-top: 90px;
+}
+
+/* TABLET (768px and up) */
+@media (min-width: 48em) {
+  .card-wrapper {
+    height: 384px;
+  }
+
+  #submit-card {
+    width: 383px;
+    margin-top: 150px;
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 90em) {
+  /* INTERACTIVE CARD */
+  #interactive-card {
+    height: 100vh;
+    background-image: url("../../images/bg-main-desktop.png");
+    justify-content: start;
+    padding: 190px 0px 0px 165px;
+  }
+
+  .card-wrapper {
+    width: 541px;
+    height: 522px;
+    top: 190px;
+    left: 165px;
+    transform: translateX(0);
+  }
+
+  #card-back {
+    top: auto;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  #card-front {
+    left: 0px;
+    top: 0px;
+    bottom: auto;
+  }
+
+  #submit-card {
+    margin-top: 277px;
+  }
+}

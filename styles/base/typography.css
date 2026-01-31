@@ -76,3 +76,33 @@
   letter-spacing: 1.25px;
   text-transform: uppercase;
 }
+
+/* EFFECTS */
+
+.text-white {
+  color: var(--color-white);
+}
+
+/* TABLET (768px and up) */
+@media (min-width: 48em) {
+  .text-preset-2 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: 3.5px;
+  }
+
+  .text-preset-7 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 90em) {
+}

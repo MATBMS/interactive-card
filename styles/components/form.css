@@ -1,0 +1,93 @@
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+/* FIELDSET */
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+/* LABEL */
+label {
+  font-family: var(--font-family-medium);
+  color: var(--color-purple-950);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 15px */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* INPUT */
+input {
+  /* layout */
+  display: flex;
+  height: 45px;
+  padding: var(--spacing-100) var(--spacing-200);
+  align-items: center;
+  gap: var(--spacing-100);
+  align-self: stretch;
+  /* style */
+  border-radius: 8px;
+  border: 1px solid var(--color-grey-200);
+  background: var(--color-white);
+}
+
+input::placeholder {
+  font-family: var(--font-family-medium);
+  color: var(--color-purple-950);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+  opacity: 0.25;
+}
+
+.input-s {
+  width: 50%;
+}
+
+.input-m {
+  width: 100%;
+}
+
+.input-l {
+  width: 100%;
+}
+
+/* DISPLAY */
+.expiry-cvc-fields {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-300);
+  justify-content: space-between;
+}
+
+.expiry-fields {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-100);
+}
+
+/* TABLET (768px and up) */
+@media (min-width: 48em) {
+  form {
+    gap: var(--spacing-500);
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 90em) {
+}
