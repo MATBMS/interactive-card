@@ -124,53 +124,88 @@
         <div class="form-fields">
           <fieldset>
             <label for="card-name">Cardholder Name</label>
-            <input
-              id="card-name"
-              type="text"
-              placeholder="e.g. Jane Appleseed"
-              class="input-l"
-              required
-            />
+            <div class="input-error-container">
+              <input
+                id="card-name"
+                type="text"
+                placeholder="e.g. Jane Appleseed"
+                class="input-l"
+              />
+              <span
+                id="card-name-error"
+                class="error-message"
+                role="alert"
+              ></span>
+            </div>
           </fieldset>
           <fieldset>
             <label for="card-number">Card Number</label>
-            <input
-              id="card-number"
-              type="number"
-              placeholder="e.g. 1234 5678 9123"
-              class="input-l"
-              required
-            />
+            <div class="input-error-container">
+              <input
+                id="card-number"
+                type="text"
+                maxlength="16"
+                placeholder="e.g. 1234 5678 9123 0000"
+                class="input-l"
+              />
+              <span
+                id="card-number-error"
+                class="error-message"
+                role="alert"
+              ></span>
+            </div>
           </fieldset>
           <div class="expiry-cvc-fields">
             <fieldset>
               <label for="card-exp-month">Exp. Date (MM/YY)</label>
               <div class="expiry-fields">
-                <input
-                  id="card-exp-month"
-                  type="number"
-                  placeholder="MM"
-                  class="input-s"
-                  required
-                />
-                <input
-                  id="card-exp-year"
-                  type="number"
-                  placeholder="YY"
-                  class="input-s"
-                  required
-                />
+                <div class="input-error-container">
+                  <input
+                    id="card-exp-month"
+                    type="text"
+                    pattern="[0-9]{1,2}"
+                    maxlength="2"
+                    placeholder="MM"
+                    class="input-s"
+                  />
+                  <span
+                    id="card-exp-month-error"
+                    class="error-message"
+                    role="alert"
+                  ></span>
+                </div>
+                <div class="input-error-container">
+                  <input
+                    id="card-exp-year"
+                    type="text"
+                    maxlength="2"
+                    placeholder="YY"
+                    class="input-s"
+                  />
+                  <span
+                    id="card-exp-year-error"
+                    class="error-message"
+                    role="alert"
+                  ></span>
+                </div>
               </div>
             </fieldset>
             <fieldset>
               <label for="card-cvc">CVC</label>
-              <input
-                id="card-cvc"
-                type="number"
-                placeholder="e.g. 123"
-                class="input-m"
-                required
-              />
+              <div class="input-error-container">
+                <input
+                  id="card-cvc"
+                  type="text"
+                  maxlength="3"
+                  placeholder="e.g. 123"
+                  class="input-m"
+                />
+                <span
+                  id="card-cvc-error"
+                  class="error-message"
+                  role="alert"
+                ></span>
+              </div>
             </fieldset>
           </div>
           <!-- END expiry-cvc-fields -->

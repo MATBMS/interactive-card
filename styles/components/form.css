@@ -56,7 +56,7 @@ input::placeholder {
 }
 
 .input-s {
-  width: 50%;
+  width: 100%;
 }
 
 .input-m {
@@ -81,13 +81,30 @@ input::placeholder {
   gap: var(--spacing-100);
 }
 
+.input-error-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+/* ERROR */
+
+.error-message {
+  font-family: var(--font-family-medium);
+  font-size: 12px;
+  color: var(--color-red-500);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 15px */
+}
+
+.invalid {
+  border: 1px solid var(--color-red-500);
+}
+
 /* TABLET (768px and up) */
 @media (min-width: 48em) {
   form {
     gap: var(--spacing-500);
   }
-}
-
-/* DESKTOP (1440px and up) */
-@media (min-width: 90em) {
 }
