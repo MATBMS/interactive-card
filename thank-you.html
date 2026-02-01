@@ -25,7 +25,12 @@
                 <div class="card-back-magnetic-stripe"></div>
                 <div class="card-back-info">
                   <div class="card-back-cvc-container">
-                    <p class="text-preset-7 text-white">000</p>
+                    <p
+                      id="interactive-card-cvc"
+                      class="text-preset-7 text-white"
+                    >
+                      000
+                    </p>
                   </div>
                   <div class="card-back-info-lines">
                     <div class="card-back-info-lines-row">
@@ -88,10 +93,25 @@
                   <div class="card-logo-circle-small"></div>
                 </div>
                 <div class="card-front-info">
-                  <p class="text-preset-2 text-white">0000 0000 0000 0000</p>
+                  <p
+                    id="interactive-card-number"
+                    class="text-preset-2 text-white"
+                  >
+                    0000 0000 0000 0000
+                  </p>
                   <div class="card-front-info-bottom">
-                    <p class="text-preset-7 text-white">Jane Appleseed</p>
-                    <p class="text-preset-7 text-white">00/00</p>
+                    <p
+                      id="interactive-card-name"
+                      class="text-preset-7 text-white"
+                    >
+                      Jane Appleseed
+                    </p>
+                    <p
+                      id="interactive-card-date"
+                      class="text-preset-7 text-white"
+                    >
+                      00/00
+                    </p>
                   </div>
                 </div>
               </div>
@@ -115,5 +135,6 @@
         </div>
       </div>
     </section>
+    <script src="./scripts/display-card-info.js"></script>
   </body>
 </html>

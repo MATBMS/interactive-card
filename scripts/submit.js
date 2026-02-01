@@ -27,7 +27,8 @@ function submitForm(e) {
   cardInfo.expYear = cardExpYear.value;
   cardInfo.Cvc = cardCvc.value;
 
-  console.log(cardInfo);
+  // Store card info in browser cache
+  localStorage.setItem('cardInfo', JSON.stringify(cardInfo));
 
   // Redirect
   window.location.href = 'thank-you.html';
