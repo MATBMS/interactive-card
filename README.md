@@ -16,3 +16,8 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 - HTML, CSS, JavaScript
 
 ## What I learned
+
+- Built an interactive card UI entirely with CSS that updates in real-time as the form is filled
+- Implemented dynamic form validation and instant visual feedback
+- Practiced synchronizing user input with UI changes using JavaScript
+- Learned efficient DOM manipulation for reactive form handling
