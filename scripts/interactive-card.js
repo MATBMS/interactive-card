@@ -1,8 +1,17 @@
-// Define UI components
-const interativeCardNumber = document.getElementById('interactive-card-number');
-const interativeCardName = document.getElementById('interactive-card-name');
-const interativeCardDate = document.getElementById('interactive-card-date');
-const interativeCardCvc = document.getElementById('interactive-card-cvc');
+// Import DOM elements
+import { formElements } from './dom-elements.js';
+
+const {
+  cardName,
+  cardNumber,
+  cardExpMonth,
+  cardExpYear,
+  cardCvc,
+  interactiveCardName,
+  interactiveCardNumber,
+  interactiveCardDate,
+  interactiveCardCvc,
+} = formElements;
 
 // Update card number
 function updateCardNumber() {
@@ -19,21 +28,21 @@ function updateCardNumber() {
   if (cardNumber.value.length > 12) {
     cardNumberArr.push(cardNumber.value.slice(12, 16));
   }
-  interativeCardNumber.textContent = cardNumberArr.join(' ');
+  interactiveCardNumber.textContent = cardNumberArr.join(' ');
 }
 
 cardNumber.addEventListener('input', updateCardNumber);
 
 // Update card name
 function updateCardName() {
-  interativeCardName.textContent = cardName.value;
+  interactiveCardName.textContent = cardName.value;
 }
 
 cardName.addEventListener('input', updateCardName);
 
 // Update card date
 function updateCardDate() {
-  interativeCardDate.textContent = `${cardExpMonth.value.slice(0, 2) || '00'}/${cardExpYear.value.slice(0, 2) || '00'}`;
+  interactiveCardDate.textContent = `${cardExpMonth.value.slice(0, 2) || '00'}/${cardExpYear.value.slice(0, 2) || '00'}`;
 }
 
 cardExpMonth.addEventListener('input', updateCardDate);
@@ -41,7 +50,7 @@ cardExpYear.addEventListener('input', updateCardDate);
 
 // Update card CVC
 function updateCardCvc() {
-  interativeCardCvc.textContent = cardCvc.value.slice(0, 3);
+  interactiveCardCvc.textContent = cardCvc.value.slice(0, 3);
 }
 
 cardCvc.addEventListener('input', updateCardCvc);

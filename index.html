@@ -16,11 +16,16 @@
     <title>Interactive card details</title>
   </head>
   <body>
-    <section id="interactive-card-details">
+    <main id="interactive-card-details" role="main">
       <div id="interactive-card">
         <div class="card-wrapper">
           <div class="card-container">
-            <div id="card-back" class="card">
+            <div
+              id="card-back"
+              class="card"
+              role="img"
+              aria-label="Credit card back preview"
+            >
               <div class="card-back-content">
                 <div class="card-back-magnetic-stripe"></div>
                 <div class="card-back-info">
@@ -81,7 +86,12 @@
                 </div>
               </div>
             </div>
-            <div id="card-front" class="card">
+            <div
+              id="card-front"
+              class="card"
+              role="img"
+              aria-label="Credit card front preview"
+            >
               <div class="card-front-background">
                 <div class="card-front-oval card-front-oval-pink"></div>
                 <div class="card-front-oval card-front-oval-orange"></div>
@@ -120,7 +130,7 @@
         </div>
       </div>
       <!-- END INTERACTIVE CARD -->
-      <form id="submit-card" action="/thank-you.html" method="post">
+      <form id="submit-card">
         <div class="form-fields">
           <fieldset>
             <label for="card-name">Cardholder Name</label>
@@ -212,9 +222,8 @@
         </div>
         <button type="submit">Confirm</button>
       </form>
-    </section>
-    <script src="./scripts/submit.js"></script>
-    <script src="./scripts/interactive-card.js"></script>
-    <script src="./scripts/animate.js"></script>
+    </main>
+    <script type="module" src="./scripts/submit.js"></script>
+    <script type="module" src="./scripts/interactive-card.js"></script>
   </body>
 </html>

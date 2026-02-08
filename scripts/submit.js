@@ -1,26 +1,29 @@
-// Define UI components
-const cardForm = document.getElementById('submit-card');
-const cardName = document.getElementById('card-name');
-const cardNameError = document.getElementById('card-name-error');
-const cardNumber = document.getElementById('card-number');
-const cardNumberError = document.getElementById('card-number-error');
-const cardExpMonth = document.getElementById('card-exp-month');
-const cardExpMonthError = document.getElementById('card-exp-month-error');
-const cardExpYear = document.getElementById('card-exp-year');
-const cardExpYearError = document.getElementById('card-exp-year-error');
-const cardCvc = document.getElementById('card-cvc');
-const cardCvcError = document.getElementById('card-cvc-error');
+// Import UI components
+import { formElements } from './dom-elements.js';
+const {
+  cardName,
+  cardNumber,
+  cardExpMonth,
+  cardExpYear,
+  cardCvc,
+  cardNameError,
+  cardNumberError,
+  cardExpMonthError,
+  cardExpYearError,
+  cardCvcError,
+  cardForm,
+} = formElements;
 
-// Define card info
+// Define card info object with default values
 const cardInfo = {
   name: 'Jane Appleseed',
-  number: 123456789123,
-  expMonth: 1,
-  expYear: 1,
-  Cvc: 123,
+  number: '123456789123',
+  expMonth: '1',
+  expYear: '1',
+  cvc: '123',
 };
 
-// Show error message
+// Show error message and mark input as invalid
 function showError(input, errorElement, message) {
   input.classList.add('invalid');
   input.setAttribute('aria-invalid', 'true');
@@ -29,7 +32,7 @@ function showError(input, errorElement, message) {
   // errorElement.classList.add('active');
 }
 
-// Clear error message
+// Clear error message and mark input as valid
 function clearError(input, errorElement) {
   input.classList.remove('invalid');
   input.setAttribute('aria-invalid', 'false');
@@ -38,94 +41,68 @@ function clearError(input, errorElement) {
   // errorElement.classList.remove('active');
 }
 
-// Validate Form
+// Validate individual field against provided rules
+function validateField(input, errorElement, rules) {
+  // Check if empty
+  if (input.value.trim() === '') {
+    showError(input, errorElement, `Can't be blank`);
+    return false;
+  }
+
+  // Check format with regex
+  if (rules.regex && !rules.regex.test(input.value)) {
+    showError(input, errorElement, rules.formatError || 'Wrong format');
+    return false;
+  }
+
+  // Check value range (for numbers)
+  if (rules.min !== undefined || rules.max !== undefined) {
+    const numValue = Number(input.value);
+    if (numValue < rules.min || numValue > rules.max) {
+      showError(input, errorElement, rules.rangeError);
+      return false;
+    }
+  }
+
+  // All checks passed
+  clearError(input, errorElement);
+  return true;
+}
+
+// Validate all form fields
 function validateForm() {
-  // Validate Card Name
-  let isNameValid = false;
-  const nameRegex = /^[a-zA-Z\s'-]{2,50}$/;
+  const isNameValid = validateField(cardName, cardNameError, {
+    regex: /^[a-zA-Z\s'-]{2,50}$/,
+    formatError: 'Wrong format',
+  });
 
-  if (cardName.value === '') {
-    showError(cardName, cardNameError, `Can't be blank`);
-  } else if (!nameRegex.test(cardName.value)) {
-    showError(cardName, cardNameError, `Wrong format`);
-  } else {
-    clearError(cardName, cardNameError);
-    isNameValid = true;
-  }
+  const isNumberValid = validateField(cardNumber, cardNumberError, {
+    regex: /^\d{16}$/,
+    formatError: 'Should be 16 numbers',
+  });
 
-  // Validate Card Number
-  let isNumberValid = false;
-  let cardNumberFormatted = `${cardNumber.value.slice(0, 4)} ${cardNumber.value.slice(4, 8)} ${cardNumber.value.slice(8, 12)} ${cardNumber.value.slice(12, 16)}`;
-  const cardNumberRegex = /^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/;
+  const isExpMonthValid = validateField(cardExpMonth, cardExpMonthError, {
+    regex: /^\d{1,2}$/,
+    formatError: 'Wrong format, numbers only',
+    min: 1,
+    max: 12,
+    rangeError: 'Should be between 1 and 12',
+  });
 
-  if (cardNumber.value === '') {
-    showError(cardNumber, cardNumberError, `Can't be blank`);
-  } else if (cardNumber.value.length !== 16) {
-    showError(cardNumber, cardNumberError, `Should be 16 numbers`);
-  } else if (!cardNumberRegex.test(cardNumberFormatted)) {
-    showError(cardNumber, cardNumberError, `Wrong format, numbers only`);
-  } else {
-    clearError(cardNumber, cardNumberError);
-    isNumberValid = true;
-  }
+  const isExpYearValid = validateField(cardExpYear, cardExpYearError, {
+    regex: /^\d{2}$/,
+    formatError: 'Wrong format, numbers only',
+    min: 1,
+    max: 99,
+    rangeError: 'Should be between 1 and 99',
+  });
 
-  // Validate Card Exp MM
-  let isExpMonthValid = false;
-  const cardExpMonthRegex = /^[0-9]{2}$/;
-  const cardExpMonthNumber = Number(cardExpMonth.value);
+  const isCvcValid = validateField(cardCvc, cardCvcError, {
+    regex: /^\d{3}$/,
+    formatError: 'Wrong format',
+  });
 
-  if (cardExpMonth.value === '') {
-    showError(cardExpMonth, cardExpMonthError, `Can't be blank`);
-  } else if (!cardExpMonthRegex.test(cardExpMonth.value)) {
-    showError(cardExpMonth, cardExpMonthError, `Wrong format, numbers only`);
-  } else if (cardExpMonthNumber <= 0 || cardExpMonthNumber > 12) {
-    showError(
-      cardExpMonth,
-      cardExpMonthError,
-      `Should be a number between 1 and 12`,
-    );
-  } else {
-    clearError(cardExpMonth, cardExpMonthError);
-    isExpMonthValid = true;
-  }
-
-  // Validate Card Exp YY
-  let isExpYearValid = false;
-  const cardExpYearRegex = /^[0-9]{2}$/;
-  const cardExpYearNumber = Number(cardExpYear.value);
-
-  if (cardExpYear.value === '') {
-    showError(cardExpYear, cardExpYearError, `Can't be blank`);
-  } else if (!cardExpYearRegex.test(cardExpYear.value)) {
-    showError(cardExpYear, cardExpYearError, `Wrong format, numbers only`);
-  } else if (cardExpYearNumber <= 0 || cardExpYearNumber > 99) {
-    showError(
-      cardExpYear,
-      cardExpYearError,
-      `Should be a number between 1 and 99`,
-    );
-  } else {
-    clearError(cardExpYear, cardExpYearError);
-    isExpYearValid = true;
-  }
-
-  // Validate Card Exp CVC
-  let isCvcValid = false;
-  const cardCvcRegex = /^[0-9]{3}$/;
-  const cardCvcNumber = Number(cardCvc.value);
-
-  if (cardCvc.value === '') {
-    showError(cardCvc, cardCvcError, `Can't be blank`);
-  } else if (!cardCvcRegex.test(cardCvc.value)) {
-    showError(cardCvc, cardCvcError, `Wrong format`);
-  } else if (cardCvcNumber <= 100 || cardCvcNumber > 999) {
-    showError(cardCvc, cardCvcError, `Should be a number between 100 and 999`);
-  } else {
-    clearError(cardCvc, cardCvcError);
-    isCvcValid = true;
-  }
-
-  // Go -No Go
+  // Return true only if all fields are valid
   return (
     isNameValid &&
     isNumberValid &&
@@ -135,7 +112,7 @@ function validateForm() {
   );
 }
 
-// Submit form
+// Handle form submission
 function submitForm(e) {
   // Prevent default behavior
   e.preventDefault();
@@ -145,18 +122,20 @@ function submitForm(e) {
 
   // Submit form if valid
   if (isValid) {
+    // Update card info with form values
     cardInfo.name = cardName.value;
     cardInfo.number = cardNumber.value;
     cardInfo.expMonth = cardExpMonth.value;
     cardInfo.expYear = cardExpYear.value;
-    cardInfo.Cvc = cardCvc.value;
+    cardInfo.cvc = cardCvc.value;
 
     // Store card info in browser cache
-    localStorage.setItem('cardInfo', JSON.stringify(cardInfo));
+    sessionStorage.setItem('cardInfo', JSON.stringify(cardInfo));
 
-    // Redirect
+    // Redirect to thank-you page
     window.location.href = 'thank-you.html';
   }
 }
 
+// Attach submit event listener to form
 cardForm.addEventListener('submit', submitForm);
